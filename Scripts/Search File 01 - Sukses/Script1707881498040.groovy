@@ -23,9 +23,9 @@ Mobile.tap(findTestObject('Object Repository/Record/Search File/android.widget.I
 
 Mobile.tap(findTestObject('Object Repository/Record/Search File/android.widget.TextView - LOGIN'), 0)
 
-Mobile.setText(findTestObject('Object Repository/Record/Search File/android.widget.EditText'), 'testuser', 0)
+Mobile.setText(findTestObject('Object Repository/Record/Search File/android.widget.EditText'), username, 0)
 
-Mobile.setText(findTestObject('Object Repository/Record/Search File/android.widget.EditText (1)'), 'Passw0rd', 0)
+Mobile.setText(findTestObject('Object Repository/Record/Search File/android.widget.EditText (1)'), password, 0)
 
 Mobile.tap(findTestObject('Object Repository/Record/Search File/android.widget.Button - LOGIN'), 0)
 
