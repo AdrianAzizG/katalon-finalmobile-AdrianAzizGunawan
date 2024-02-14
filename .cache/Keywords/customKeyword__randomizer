@@ -1,0 +1,15 @@
+{
+  "keywordFileContentHash": "C4D41827865D45DB5843E146840064D8",
+  "keywordClasses": [
+    {
+      "name": "customKeyword.randomizer",
+      "keywordMethods": [
+        {
+          "name": "generateRandomNumber",
+          "parameters": []
+        }
+      ]
+    }
+  ],
+  "javadocParsed": false
+}
