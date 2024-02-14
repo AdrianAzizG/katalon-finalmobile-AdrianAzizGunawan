@@ -17,6 +17,31 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+randomNumber = CustomKeywords.'customKeyword.randomizer.generateRandomNumber'()
+
+switch (randomNumber) {
+    case 1:
+		GlobalVariable.searchKeyword = 'HP Elitepad'
+		GlobalVariable.fullItemName = 'HP ElitePad 1000 G2 Tablet'
+        break
+	case 2:
+		GlobalVariable.searchKeyword = 'Proteus'
+		GlobalVariable.fullItemName = 'Logitech G502 Proteus Core'
+		break
+	case 3:
+		GlobalVariable.searchKeyword = 'Beats'
+		GlobalVariable.fullItemName = 'Beats Studio 2 Over-Ear Matte Black Headphones'
+		break
+	case 4:
+		GlobalVariable.searchKeyword = 'HP S9500'
+		GlobalVariable.fullItemName = 'HP S9500 Bluetooth Wireless Speaker'
+		break
+	case 5:
+		GlobalVariable.searchKeyword = 'HP ZBook'
+		GlobalVariable.fullItemName = 'HP ZBook 17 G2 Mobile Workstation'
+		break
+}
+
 Mobile.startApplication('C:\\Main Storage\\Downloads\\Advantage+demo+3.2.apk', true)
 
 Mobile.tap(findTestObject('Object Repository/Record/Search File/android.widget.ImageView'), 0)
@@ -31,7 +56,7 @@ Mobile.tap(findTestObject('Object Repository/Record/Search File/android.widget.B
 
 Mobile.delay(4)
 
-Mobile.setText(findTestObject('Record/Search File/android.widget.EditText - Search'), 'HP Pavilion 15z Touch Laptop', 0)
+Mobile.setText(findTestObject('Record/Search File/android.widget.EditText - Search'), GlobalVariable.searchKeyword, 0)
 
 Mobile.tap(findTestObject('Object Repository/Record/Search File/android.widget.ImageView (1)'), 0)
 
@@ -43,12 +68,14 @@ Mobile.delay(4)
 
 Mobile.tap(findTestObject('Object Repository/Record/Search File/android.widget.Button - ADD TO CART'), 0)
 
+Mobile.delay(2)
+
 Mobile.tap(findTestObject('Object Repository/Record/Search File/android.widget.ImageView (2)'), 0)
 
 Mobile.delay(4)
 
 Mobile.verifyElementText(findTestObject('Object Repository/Record/Search File/android.widget.TextView - HP Pavilion 15z Touch Laptop'), 
-    'HP Pavilion 15z Touch Laptop')
+    GlobalVariable.fullItemName)
 
 Mobile.closeApplication()
 
