@@ -25,10 +25,9 @@ public class randomizer {
 	@Keyword
 	def generateRandomNumber() {
 		Random random = new Random()
-		TestData users = findTestData('Data Files/Users')
-		int usersDataCount = users.getRowNumbers()
+		int maximum = 5
 		int minimum = 1
-		int randomNumber = random.nextInt(usersDataCount) + minimum
+		int randomNumber = random.nextInt(maximum) + minimum
 		return randomNumber
 	}
 }
